@@ -1,7 +1,10 @@
 #include "TextureManager.h"
+
 TextureManager::TextureManager()
 {
 	Tex = NULL;
+	width = 0;
+	height = 0;
 	src = { 0,0,0,0 };
 	dest = { 0,0,0,0 };
 }
@@ -16,6 +19,7 @@ SDL_Texture* TextureManager::Texture(const char* img_path, SDL_Renderer* ren)
 	}
 	else
 	{
+		SDL_SetColorKey(surface, SDL_TRUE, SDL_MapRGB(surface->format, 0xFF, 0xFF, 0xFF));
 		tex = SDL_CreateTextureFromSurface(ren, surface);
 		if (tex == NULL)
 		{
@@ -52,3 +56,40 @@ void TextureManager::CreateTexture(const char* img_path, SDL_Renderer* ren)
 {
 	Tex = TextureManager::Texture(img_path, ren);
 }
+
+void TextureManager::Free()
+{
+	if (Tex != NULL)
+	{
+		SDL_DestroyTexture(Tex);
+		Tex = NULL;
+	}
+}
+
+void TextureManager::Render(int x, int y, double angle, SDL_Rect* clip, 
+							SDL_RendererFlip flip, SDL_Renderer* ren)
+{
+	SDL_Rect Rect_Render = { x,y,NULL, NULL };
+	if (clip != NULL)
+	{
+		Rect_Render.w = clip->w;
+		Rect_Render.h = clip->h;
+	}
+
+	SDL_RenderCopyEx(ren, Tex, clip, &Rect_Render, angle, NULL, flip);
+}
+
+int TextureManager::getHeight()
+{
+	return height;
+}
+int TextureManager::getWidth()
+{
+	return width;
+}
+void position::getPos(const short int x, const short int y)
+{
+	this->x = x;
+	this->y = y;
+}
+

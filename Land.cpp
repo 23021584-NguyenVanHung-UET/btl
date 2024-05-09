@@ -1,6 +1,6 @@
 #include "Land.h"
 
-void Land::landUpdate1(bool birdDie)
+void Land::landUpdate1(bool die)
 {
 	if (distance1 <= -720)
 	{
@@ -8,7 +8,7 @@ void Land::landUpdate1(bool birdDie)
 	}
 	else
 	{
-		if (!birdDie)
+		if (!die)
 		{
 			distance1--;
 		}
@@ -16,7 +16,7 @@ void Land::landUpdate1(bool birdDie)
 	}
 }
 
-void Land::landUpdate2(bool birdDie)
+void Land::landUpdate2(bool die)
 {
 	if (distance2 <= 0)
 	{
@@ -24,7 +24,7 @@ void Land::landUpdate2(bool birdDie)
 	}
 	else
 	{
-		if (!birdDie)
+		if (!die)
 		{
 			distance2--;
 		}

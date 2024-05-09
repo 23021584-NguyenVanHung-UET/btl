@@ -10,8 +10,8 @@ private:
 	int distance1 = 0;
 	int distance2 = 720;
 public:
-	void landUpdate1(bool birdDie);
-	void landUpdate2(bool birdDie);
+	void landUpdate1(bool die);
+	void landUpdate2(bool die);
 	void Render(SDL_Renderer* ren);
 };
 

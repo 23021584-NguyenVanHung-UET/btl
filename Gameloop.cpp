@@ -6,8 +6,14 @@ Gameloop::Gameloop()
 	renderer = NULL;
 	gameState = false;
 	birdDie = false;
+	bg.setSrc(0, 0, WIDTH, HEIGHT);
+	bg.setDest(0, 0, WIDTH, HEIGHT);
 	p.setSrc(0, 0, 34, 24);
 	p.setDest(24, HEIGHT / 2, 44, 34);
+	base1.setSrc(0, 0, WIDTH, HEIGHT);
+	base1.setDest(0, 720 - 112, WIDTH, HEIGHT);
+	base2.setSrc(0, 0, WIDTH, HEIGHT);
+	base2.setDest(0, 720 - 112, WIDTH, HEIGHT);
 }
 
 Gameloop::~Gameloop(){}
@@ -49,6 +55,13 @@ void Gameloop::InitData()
 				p.CreateTexture("img/yellowbird1.png", renderer);
 				p.CreateTexture1("img/yellowbird2.png", renderer);
 				p.CreateTexture2("img/yellowbird3.png", renderer);
+				base1.CreateTexture("img/base.png", renderer);
+				base2.CreateTexture("img/base.png", renderer);
+				for (int i = 0; i < 3; i++)
+				{
+					upper[i].CreateTexture("img/top.png", renderer);
+					lower[i].CreateTexture("img/bot.png", renderer);
+				}
 			}
 			else
 			{
@@ -60,7 +73,15 @@ void Gameloop::InitData()
 }
 void Gameloop::Update()
 {
-
+	base1.landUpdate1(die);
+	base2.landUpdate2(die);
+	upper[0].pipeupdate1(0, die);
+	upper[1].pipeupdate1(1, die);
+	upper[2].pipeupdate1(2, die);
+	lower[0].pipeupdate2(0);
+	lower[1].pipeupdate2(1);
+	lower[2].pipeupdate2(2);
+	
 }
 void Gameloop::Render()
 {
@@ -68,6 +89,14 @@ void Gameloop::Render()
 	bg.Render(renderer);
 	p.Render(renderer);
 	m->Render(renderer);
+	base1.Render(renderer);
+	base2.Render(renderer);
+	upper[0].Render(renderer);
+	upper[1].Render(renderer);
+	upper[2].Render(renderer);
+	lower[0].Render(renderer);
+	lower[1].Render(renderer);
+	lower[2].Render(renderer);
 	SDL_RenderPresent(renderer);
 }
 
