@@ -1,138 +1,78 @@
 #include "Gameloop.h"
+#include <iostream>
+using namespace std; 
 
-Gameloop::Gameloop()
+gameloop::gameloop()
 {
-	window = NULL;
-	renderer = NULL;
-	gameState = false;
-	birdDie = false;
-	bg.setSrc(0, 0, WIDTH, HEIGHT);
-	bg.setDest(0, 0, WIDTH, HEIGHT);
-	p.setSrc(0, 0, 34, 24);
-	p.setDest(24, HEIGHT / 2, 44, 34);
-	base1.setSrc(0, 0, WIDTH, HEIGHT);
-	base1.setDest(0, 720 - 112, WIDTH, HEIGHT);
-	base2.setSrc(0, 0, WIDTH, HEIGHT);
-	base2.setDest(0, 720 - 112, WIDTH, HEIGHT);
+	initData();
 }
 
-Gameloop::~Gameloop(){}
-
-
-void Gameloop::InitData()
+gameloop::~gameloop()
 {
-	SDL_Init(SDL_INIT_EVERYTHING);
-	if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
+
+}
+
+bool gameloop::initData()
+{
+	bool state = true;
+	if (SDL_Init(SDL_INIT_VIDEO) < 0)
 	{
-		cout << "SDL can't init!!! " << SDL_GetError() << endl;
-		gameState = false;
+		cout << "SDL can't init!!! SDL Error: " << SDL_GetError();
+		state = false;
 	}
 	else
 	{
-		gameState = true;
-		window = SDL_CreateWindow("Flappy Bird", 
-						SDL_WINDOWPOS_CENTERED, 
-						SDL_WINDOWPOS_CENTERED, 
-						WIDTH, HEIGHT, 
-						SDL_WINDOW_RESIZABLE);
-		if (window == NULL)
+		Window = SDL_CreateWindow("Flappy Bird Ver 2024", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+		if (Window == NULL)
 		{
-
-			gameState = false;
-			cout << "Window can't init!!!" << SDL_GetError() << endl;
+			cout << "Window can't created!!! SDL_Error " << SDL_GetError();
+			state = false;
 		}
 		else
 		{
-			gameState = true;
-			renderer = SDL_CreateRenderer(window, -1, 0);
-			if (renderer)
+			Renderer = SDL_CreateRenderer(Window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+			if (Renderer == NULL)
 			{
-				gameState = true;
-				cout << "render succeeded!!!" << endl;
-				SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-				bg.CreateTexture("img/background-day.png", renderer);
-				m->CreateTexture("img/mouse.png", renderer);
-				p.CreateTexture("img/yellowbird1.png", renderer);
-				p.CreateTexture1("img/yellowbird2.png", renderer);
-				p.CreateTexture2("img/yellowbird3.png", renderer);
-				base1.CreateTexture("img/base.png", renderer);
-				base2.CreateTexture("img/base.png", renderer);
-				for (int i = 0; i < 3; i++)
+				state = false;
+				cout << "Renderer can't create!!! SDL_Error  " << SDL_GetError();
+			}
+			else
+			{
+				if (!(IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG))
 				{
-					upper[i].CreateTexture("img/top.png", renderer);
-					lower[i].CreateTexture("img/bot.png", renderer);
+					cout << "SDL IMG can't init!!! SDL_image Error " << IMG_GetError();
+					state = false;
+				}
+				else
+				{
+					bg.init();
+					b.init();
 				}
 			}
-			else
-			{
-				gameState = false;
-				cout << "Render can't init!!!!" << SDL_GetError() << endl;
-			}
+			
 		}
 	}
-}
-void Gameloop::Update()
-{
-	base1.landUpdate1(die);
-	base2.landUpdate2(die);
-	upper[0].pipeupdate1(0, die);
-	upper[1].pipeupdate1(1, die);
-	upper[2].pipeupdate1(2, die);
-	lower[0].pipeupdate2(0);
-	lower[1].pipeupdate2(1);
-	lower[2].pipeupdate2(2);
-	
-}
-void Gameloop::Render()
-{
-	SDL_RenderClear(renderer);
-	bg.Render(renderer);
-	p.Render(renderer);
-	m->Render(renderer);
-	base1.Render(renderer);
-	base2.Render(renderer);
-	upper[0].Render(renderer);
-	upper[1].Render(renderer);
-	upper[2].Render(renderer);
-	lower[0].Render(renderer);
-	lower[1].Render(renderer);
-	lower[2].Render(renderer);
-	SDL_RenderPresent(renderer);
+	return state;
 }
 
-void Gameloop::Clear()
+void gameloop::render()
 {
-	SDL_DestroyRenderer(renderer);
-	SDL_DestroyWindow(window);
+	bg.render();
+	b.render();
+	SDL_RenderPresent(Renderer);
+	SDL_RenderClear(Renderer);
 }
 
-bool Gameloop::getGameState()
+void gameloop::update()
 {
-	return gameState;
+	bg.update();
+	b.update();
+}
+void gameloop::clear()
+{
+	bg.Free();
+	b.Free();
 }
 
-void Gameloop::Event()
-{
-	p.GetJumpTime();
-	SDL_PollEvent(&event);
-	if (event.type == SDL_QUIT)
-	{
-		gameState = false;
-	}
-	if (event.type == SDL_KEYDOWN)
-	{
-		if (event.key.keysym.sym == SDLK_UP)
-		{
-			if (!p.JumpState())
-			{
-				p.Jump();
-			}
-			else
-			{
-				p.Gravity();
-			}
-		}
-	}
-	else
-		p.Gravity();
-}
+
+

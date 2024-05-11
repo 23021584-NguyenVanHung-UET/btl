@@ -1,95 +1,92 @@
 #include "TextureManager.h"
+#include <iostream>
+
+using namespace std;
+bool TextureManager::quit = false;
+bool TextureManager::die = true;
+short int TextureManager::score = 0;
+SDL_Window* TextureManager::Window = NULL;
+SDL_Renderer* TextureManager::Renderer=NULL;
+SDL_Event TextureManager::event;
 
 TextureManager::TextureManager()
 {
-	Tex = NULL;
-	width = 0;
-	height = 0;
-	src = { 0,0,0,0 };
-	dest = { 0,0,0,0 };
+	Texture = NULL;
 }
-SDL_Texture* TextureManager::Texture(const char* img_path, SDL_Renderer* ren)
+
+short int TextureManager::getWidth()
 {
-	SDL_Texture* tex = NULL;
-	SDL_Surface* surface = NULL;
-	surface = IMG_Load(img_path);
-	if (surface == NULL)
+	return Width;
+}
+
+short int TextureManager::getHeight()
+{
+	return Height;
+}
+
+void TextureManager::free()
+{
+	if (Texture != NULL)
 	{
-		cout << "IMG can't load!!!" << SDL_GetError() << endl;
+		SDL_DestroyTexture(Texture);
+		Texture = NULL;
+		Width = 0;
+		Height = 0;
+	}
+}
+
+void TextureManager::Render(short int x, short int y, short int angle, SDL_Rect* clip, SDL_RendererFlip flip)
+{
+	SDL_Rect Rect = { x, y, Width, Height };
+
+	if (clip != NULL)
+	{
+		Rect.w = clip->w;
+		Rect.h = clip->h;
+	}
+
+	SDL_RenderCopyEx(Renderer, Texture, clip, &Rect, angle, NULL, flip);
+}
+
+bool TextureManager::CreatTexture(string path, double scale)
+{
+	SDL_Surface* Surface = NULL;
+	Surface = IMG_Load(path.c_str());
+	if (Surface == NULL)
+	{
+		cout << "Unable to load image %s! SDL_image Error: %s\n" << path.c_str() << IMG_GetError() <<endl;
 	}
 	else
 	{
-		SDL_SetColorKey(surface, SDL_TRUE, SDL_MapRGB(surface->format, 0xFF, 0xFF, 0xFF));
-		tex = SDL_CreateTextureFromSurface(ren, surface);
-		if (tex == NULL)
+		SDL_SetColorKey(Surface, SDL_TRUE, SDL_MapRGB(Surface->format, 0x00, 0xFF, 0xFF));
+
+		Texture = SDL_CreateTextureFromSurface(Renderer, Surface);
+		if (Texture == NULL)
 		{
-			cout << "Create Texture failed !!! " << SDL_GetError() << endl;
+			cout << "Unable to create texture from %s! SDL Error: %s\n"<< path.c_str()<< SDL_GetError()<<endl;
 		}
+		else
+		{
+			Width = (Surface->w) * scale;
+			Height = (Surface->h) * scale;
+		}
+
+		SDL_FreeSurface(Surface);
 	}
+	SDL_SetRenderDrawColor(Renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 
-	return tex;
-}
+	return Texture != NULL;
 
-SDL_Texture* TextureManager::getTexture()
-{
-	return Tex;
 }
 
-SDL_Rect& TextureManager::getSrc()
+bool TextureManager::isNULL()
 {
-	return src;
-}
-void TextureManager::setSrc(int x, int y, int w, int h)
-{
-	src = { x,y,w, h };
-}
-SDL_Rect& TextureManager::getDest()
-{
-	return dest;
-}
-void TextureManager::setDest(int x, int y, int w, int h)
-{
-	dest = { x,y,w, h };
+	if (Texture == NULL) return true;
+	return false;
 }
 
-void TextureManager::CreateTexture(const char* img_path, SDL_Renderer* ren)
-{
-	Tex = TextureManager::Texture(img_path, ren);
-}
-
-void TextureManager::Free()
-{
-	if (Tex != NULL)
-	{
-		SDL_DestroyTexture(Tex);
-		Tex = NULL;
-	}
-}
-
-void TextureManager::Render(int x, int y, double angle, SDL_Rect* clip, 
-							SDL_RendererFlip flip, SDL_Renderer* ren)
-{
-	SDL_Rect Rect_Render = { x,y,NULL, NULL };
-	if (clip != NULL)
-	{
-		Rect_Render.w = clip->w;
-		Rect_Render.h = clip->h;
-	}
-
-	SDL_RenderCopyEx(ren, Tex, clip, &Rect_Render, angle, NULL, flip);
-}
-
-int TextureManager::getHeight()
-{
-	return height;
-}
-int TextureManager::getWidth()
-{
-	return width;
-}
 void position::getPos(const short int x, const short int y)
 {
 	this->x = x;
 	this->y = y;
 }
-

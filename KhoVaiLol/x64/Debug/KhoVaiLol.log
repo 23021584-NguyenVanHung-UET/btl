@@ -1,3 +1,0 @@
-﻿  Pipe.cpp
-C:\Users\ADMIN\source\repos\KhoVaiLol\Pipe.cpp(25,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  KhoVaiLol.vcxproj -> C:\Users\ADMIN\source\repos\KhoVaiLol\x64\Debug\KhoVaiLol.exe

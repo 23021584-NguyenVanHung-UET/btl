@@ -1,14 +1,20 @@
-#pragma once
 #ifndef BACKGROUND_H_
 #define BACKGROUND_H_
 
 #include "TextureManager.h"
+#include "vector"
 
-class Background : public TextureManager
+using namespace std;
+
+class background :TextureManager
 {
 private:
+	position pos_bg;
 public:
-	void Render(SDL_Renderer* ren);
+	bool init();
+	void Free();
+	void render();
+	void update();
 };
 
 #endif // !BACKGROUND_H_

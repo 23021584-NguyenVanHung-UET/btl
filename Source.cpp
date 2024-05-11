@@ -1,8 +1,13 @@
 #include "Gameloop.h"
-
+#include <time.h>
+#include "TextureManager.h"
+#include <SDL.h>
+#include <SDL_image.h>
+#include <SDL_ttf.h>
 using namespace std;
 
-Gameloop* g = new Gameloop();
+const int FPS = 60;
+const int frameDelay = 1000 / FPS;
 
 int main(int argc, char** argv)
 {
@@ -10,19 +15,18 @@ int main(int argc, char** argv)
 	const int DELAY_TIME = 1000 / FPS;
 	Uint32 frameStart;
 	Uint32 frameTime;
-	g->InitData();
-	while (g->getGameState())
+	gameloop g;
+	while (1)
 	{
 		frameStart = SDL_GetTicks();
-		g->Event();
-		g->Render();
-		g->Update();
+		g.render();
+		g.update();
 		frameTime = SDL_GetTicks() - frameStart;
 		if (frameTime < DELAY_TIME)
 		{
 			SDL_Delay(DELAY_TIME - frameTime);
 		}
 	}
-	g->Clear();
+	g.clear();
 	return 0;
 }
