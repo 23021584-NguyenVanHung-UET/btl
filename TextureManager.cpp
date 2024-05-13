@@ -3,8 +3,8 @@
 
 using namespace std;
 bool TextureManager::quit = false;
-bool TextureManager::die = true;
-short int TextureManager::score = 0;
+bool TextureManager::die = false;
+int TextureManager::score = 0;
 SDL_Window* TextureManager::Window = NULL;
 SDL_Renderer* TextureManager::Renderer=NULL;
 SDL_Event TextureManager::event;
@@ -14,12 +14,12 @@ TextureManager::TextureManager()
 	Texture = NULL;
 }
 
-short int TextureManager::getWidth()
+int TextureManager::getWidth()
 {
 	return Width;
 }
 
-short int TextureManager::getHeight()
+int TextureManager::getHeight()
 {
 	return Height;
 }

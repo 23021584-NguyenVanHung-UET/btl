@@ -31,8 +31,8 @@ public:
 
     bool CreatTexture(string path, double scale = 1);
 
-    short int getWidth();
-    short int getHeight();
+    int getWidth();
+    int getHeight();
 
     void free();
     void Render(short int x, short int y, short int angle = 0, SDL_Rect* clip = NULL, SDL_RendererFlip flip = SDL_FLIP_NONE);
@@ -48,16 +48,14 @@ public:
     static SDL_Event event;
     static bool quit;
     static bool die;
-    static short int score;
-
-    static const short int SCREEN_WIDTH = 350;
-    static const short int SCREEN_HEIGHT = 720;
-    static const short int PIPE_SPACE = 160;
-    static const short int TOTAL_PIPE = 4;
-    static const short int PIPE_DISTANCE = 220;
-    static const short int BASE_HEIGHT = 180;
-    static const short int SHIBA_WIDTH = 50;
-    static const short int SHIBA_HEIGHT = 35;
+    static int score ;
+    static const int SCREEN_WIDTH = 350;
+    static const int SCREEN_HEIGHT = 625;
+    static const int PIPE_SPACE = 160;
+    static const int PIPE_DISTANCE = 220;
+    static const int BASE_HEIGHT = 140;
+    static const int BIRD_WIDTH = 50;
+    static const int BIRD_HEIGHT = 35;
 };
 
 #endif // !TEXTUREMANAGER_H_

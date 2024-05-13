@@ -14,7 +14,6 @@ bool pipe::init()
 		int y = (rand() % (randMax - randMin + 1)) + randMin;
 		tmp.getPos(x, y);
 		pos_pipe.push_back(tmp);
-		cout << x << " " << y << endl;
 	}
 	if (isNULL())
 	{
@@ -39,10 +38,9 @@ void pipe::render()
 		Render(pos_pipe[i].x, pos_pipe[i].y + getHeight() + PIPE_SPACE, 180);
 	}
 }
-
 void pipe::update()
 {
-	if (die == true)
+	if (die == false)
 	{
 		for (int i = 0; i < 4; i++)
 		{
@@ -55,6 +53,7 @@ void pipe::update()
 			{
 				pos_pipe[i].x -= 3;
 			}
+			//cout << pos_pipe[i].x << " " << pos_pipe[i].y << endl;
 		}
 	}
 }

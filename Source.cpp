@@ -16,9 +16,11 @@ int main(int argc, char** argv)
 	Uint32 frameStart;
 	Uint32 frameTime;
 	gameloop g;
-	while (1)
+	g.initData();
+	while (g.gameplay() != false)
 	{
 		frameStart = SDL_GetTicks();
+		g.Event();
 		g.render();
 		g.update();
 		frameTime = SDL_GetTicks() - frameStart;

@@ -12,11 +12,14 @@ class pipe :TextureManager
 private:
 	const int randMin = -373 + 30;
 	const int randMax = SCREEN_HEIGHT - BASE_HEIGHT - 373 - PIPE_DISTANCE - 30;
+	
 public:
 	bool init();
 	void Free();
 	void render();
 	void update();
+	int width() { return getWidth(); }
+	int height() { return getHeight(); }
 };
 
 #endif // !PIPE_H_

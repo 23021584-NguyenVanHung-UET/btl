@@ -2,12 +2,12 @@
 
 bool base::init()
 {
-	pos_base.getPos(0, SCREEN_HEIGHT-BASE_HEIGHT+70);
+	pos_base.getPos(0, SCREEN_HEIGHT-BASE_HEIGHT);
 	string path = "img/base.png";
 
 	if (isNULL())
 	{
-		if (CreatTexture(path.c_str()), 2)
+		if (CreatTexture(path.c_str()), 1)
 		{
 			return true;
 		}
@@ -38,7 +38,7 @@ void base::render()
 		}
 		else
 		{
-			pos_base.getPos(0, SCREEN_HEIGHT - BASE_HEIGHT + 70);
+			pos_base.getPos(0, SCREEN_HEIGHT - BASE_HEIGHT);
 			Render(pos_base.x, pos_base.y);
 		}
 	}

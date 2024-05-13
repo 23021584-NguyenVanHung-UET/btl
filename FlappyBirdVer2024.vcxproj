@@ -135,7 +135,11 @@
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="Base.cpp" />
     <ClCompile Include="Bird.cpp" />
+    <ClCompile Include="Checkcollision.cpp" />
     <ClCompile Include="Gameloop.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Pipe.cpp" />
+    <ClCompile Include="Sound.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="TextureManager.cpp" />
   </ItemGroup>
@@ -143,7 +147,11 @@
     <ClInclude Include="Background.h" />
     <ClInclude Include="Base.h" />
     <ClInclude Include="Bird.h" />
+    <ClInclude Include="Checkcollision.h" />
     <ClInclude Include="Gameloop.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="Pipe.h" />
+    <ClInclude Include="Sound.h" />
     <ClInclude Include="TextureManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
