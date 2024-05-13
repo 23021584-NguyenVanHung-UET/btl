@@ -4,17 +4,18 @@ using namespace std;
 
 gameloop::gameloop()
 {
-	initData();
+	state = true;
+	cout << state << endl;
+
 }
 
 gameloop::~gameloop()
 {
-
+	
 }
 
 bool gameloop::initData()
 {
-	bool state = true;
 	if (SDL_Init(SDL_INIT_VIDEO) < 0)
 	{
 		cout << "SDL can't init!!! SDL Error: " << SDL_GetError();
@@ -38,7 +39,7 @@ bool gameloop::initData()
 			}
 			else
 			{
-				if (!(IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG))
+				if (!(IMG_Init(IMG_INIT_PNG) && IMG_INIT_PNG))
 				{
 					cout << "SDL IMG can't init!!! SDL_image Error " << IMG_GetError();
 					state = false;
@@ -46,7 +47,10 @@ bool gameloop::initData()
 				else
 				{
 					bg.init();
+					p.init();
 					b.init();
+					bird.init();
+					s.init();
 				}
 			}
 			
@@ -58,7 +62,11 @@ bool gameloop::initData()
 void gameloop::render()
 {
 	bg.render();
+	p.render();
 	b.render();
+	bird.render();
+	s.render();
+	s.play1();
 	SDL_RenderPresent(Renderer);
 	SDL_RenderClear(Renderer);
 }
@@ -66,12 +74,49 @@ void gameloop::render()
 void gameloop::update()
 {
 	bg.update();
+	p.update();
 	b.update();
+	if (bird.check_collision() == true)
+	{
+		cout << score << endl;
+		state = false;
+	}
 }
 void gameloop::clear()
 {
 	bg.Free();
 	b.Free();
+	p.Free();
+}
+
+bool gameloop::gameplay()
+{
+	return state;
+}
+void gameloop::Event()
+{
+	bird.get_jump_time();
+	SDL_PollEvent(&event);
+	if (event.type == SDL_QUIT)
+	{
+		state = false;
+	}
+	if (event.type == SDL_KEYDOWN)
+	{
+		if (event.key.keysym.sym == SDLK_UP)
+		{
+			if (!bird.jump_state())
+			{
+				bird.jump();
+			}
+			else
+			{
+				bird.gravity();
+			}
+		}
+	}
+	else
+		bird.gravity();
 }
 
 
