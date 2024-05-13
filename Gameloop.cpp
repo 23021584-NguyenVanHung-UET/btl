@@ -81,6 +81,7 @@ void gameloop::update()
 		cout << score << endl;
 		state = false;
 	}
+	//bird.update();
 }
 void gameloop::clear()
 {

@@ -25,6 +25,9 @@ private:
 	int animation_timer;
 	SDL_Rect rect_bird;
 	SDL_Rect rect_pipe;
+	string path1 = "img/yellowbird1.png";
+	string path2 = "img/yellowbird2.png";
+	string path3 = "img/yellowbird3.png";
 public:
 	void gravity();
 	void get_jump_time();
@@ -32,6 +35,7 @@ public:
 	bool jump_state();
 	void render();
 	bool init(); 
+	void update();
 	bool check_collision();
 
 };

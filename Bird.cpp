@@ -7,47 +7,44 @@ position bird_pipe;
 void bird::render()
 {
 	Render(pos_bird.x, pos_bird.y);
+	animation_timer++;
+	if (animation_timer > 48)
+	{
+		animation_timer = 0;
+	}
+	if (animation_timer < 16)
+	{
+		if (CreatTexture(path1.c_str(), 1))
+		{
+			Render(pos_bird.x, pos_bird.y);
+		}
+	}
+	if (animation_timer >= 16 && animation_timer <= 32)
+	{
+		if (CreatTexture(path2.c_str(), 1))
+		{
+			Render(pos_bird.x, pos_bird.y);
+		}
+	}
+	if (animation_timer > 32 && animation_timer <= 48)
+	{
+		if (CreatTexture(path3.c_str(), 1))
+		{
+			Render(pos_bird.x, pos_bird.y);
+		}
+	}
 	//cout << rect_pipe.x << " " << rect_pipe.y << " " << rect_pipe.w << " " << rect_pipe.h << endl;
 	//cout << rect_bird.x << " " << rect_bird.y << " " << rect_bird.w << " " << rect_bird.h << endl;
 }
 
+
 bool bird::init()
 {
 	pos_bird.getPos(75, SCREEN_HEIGHT / 2 - 10);
-	string path1 = "img/yellowbird1.png";
-	string path2 = "img/yellowbird2.png";
-	string path3 = "img/yellowbird3.png";
 	
 	if (isNULL())
 	{
-	animation_timer++;
-	if (animation_timer < 16)
-		{
-			if (CreatTexture(path1.c_str(), 1))
-			{
-				return true;
-			}	
-		}
-	if (animation_timer >= 16 && animation_timer <= 32)
-		{
-		animation_timer++;
-			if (CreatTexture(path2.c_str(), 1))
-			{
-				return true;
-			}
-		}
-	if (animation_timer > 32 && animation_timer <= 48)
-		{
-		animation_timer++;
-			if (CreatTexture(path3.c_str(), 1))
-			{
-				return true;
-			}
-		}
-		if (animation_timer > 48)
-		{
-			animation_timer = 0;
-		}
+		return true;
 	}
 	return false;
 }
@@ -57,7 +54,7 @@ bool bird::init()
 void bird::gravity()
 {
 	rect_bird.x = 75;
-	rect_bird.w = rect_bird.x + 10;
+	rect_bird.w = rect_bird.x + 15;
 	if (jump_state())
 	{
 		a = a + 0.035;
@@ -65,7 +62,7 @@ void bird::gravity()
 		y0 += (int)(g + 2 * a + jump_height);
 		pos_bird.y = y0;
 		rect_bird.y = pos_bird.y;
-		rect_bird.h = rect_bird.y+ 10;
+		rect_bird.h = rect_bird.y+ 20;
 		if (jump_height > 0)
 		{
 			inJump = false;

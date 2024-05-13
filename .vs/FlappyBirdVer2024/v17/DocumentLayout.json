@@ -3,18 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|solutionrelative:Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\Gameloop.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|solutionrelative:Gameloop.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\TextureManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|solutionrelative:TextureManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\Bird.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|solutionrelative:Bird.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -23,16 +11,28 @@
       "RelativeMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|solutionrelative:Bird.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\Pipe.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|solutionrelative:Pipe.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\Pipe.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|solutionrelative:Pipe.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\Gameloop.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|solutionrelative:Gameloop.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\Gameloop.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|solutionrelative:Gameloop.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|solutionrelative:Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\Pipe.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|solutionrelative:Pipe.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\TextureManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|solutionrelative:TextureManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\Pipe.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|solutionrelative:Pipe.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{11BE807F-0957-4E2E-8571-3BE8AE3181A3}|FlappyBirdVer2024.vcxproj|C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\TextureManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -58,25 +58,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Gameloop.cpp",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\Gameloop.cpp",
-              "RelativeDocumentMoniker": "Gameloop.cpp",
-              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\Gameloop.cpp",
-              "RelativeToolTip": "Gameloop.cpp",
-              "ViewState": "AQIAAGwAAAAAAAAAAAAYwHcAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-11T14:42:16.76Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "Gameloop.h",
               "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\Gameloop.h",
               "RelativeDocumentMoniker": "Gameloop.h",
@@ -96,7 +82,7 @@
               "RelativeDocumentMoniker": "Pipe.h",
               "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\Pipe.h",
               "RelativeToolTip": "Pipe.h",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-12T13:16:54.209Z",
               "IsPinned": true,
@@ -104,13 +90,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Source.cpp",
               "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\Source.cpp",
               "RelativeDocumentMoniker": "Source.cpp",
               "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\Source.cpp",
               "RelativeToolTip": "Source.cpp",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABAAAAASAAAA",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAAA0AAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-11T14:08:20.317Z",
               "IsPinned": true,
@@ -122,33 +108,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
+              "Title": "Gameloop.cpp",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\Gameloop.cpp",
+              "RelativeDocumentMoniker": "Gameloop.cpp",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\Gameloop.cpp",
+              "RelativeToolTip": "Gameloop.cpp",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAYwFMAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-05-11T14:42:16.76Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Bird.h",
               "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\Bird.h",
               "RelativeDocumentMoniker": "Bird.h",
               "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\Bird.h",
               "RelativeToolTip": "Bird.h",
-              "ViewState": "AQIAACEAAAAAAAAAAAAAABUAAAAYAAAA",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAACUAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-11T18:05:03.938Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Bird.cpp",
               "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\Bird.cpp",
               "RelativeDocumentMoniker": "Bird.cpp",
               "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\Bird.cpp",
               "RelativeToolTip": "Bird.cpp",
-              "ViewState": "AQIAAFgAAAAAAAAAAAAYwGMAAAAkAAAA",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAAC4AAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-05-11T18:05:13.504Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "TextureManager.h",
               "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\TextureManager.h",
               "RelativeDocumentMoniker": "TextureManager.h",
@@ -156,8 +155,7 @@
               "RelativeToolTip": "TextureManager.h",
               "ViewState": "AQIAAC0AAAAAAAAAAAAAADIAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-11T14:13:00.901Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-11T14:13:00.901Z"
             },
             {
               "$type": "Document",
@@ -169,12 +167,11 @@
               "RelativeToolTip": "TextureManager.cpp",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-12T15:15:47.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-12T15:15:47.79Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Pipe.cpp",
               "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\FlappyBirdVer2024\\Pipe.cpp",
               "RelativeDocumentMoniker": "Pipe.cpp",
@@ -182,8 +179,7 @@
               "RelativeToolTip": "Pipe.cpp",
               "ViewState": "AQIAACQAAAAAAAAAAAAAADUAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-12T17:07:05.785Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-12T17:07:05.785Z"
             },
             {
               "$type": "Document",
@@ -195,8 +191,7 @@
               "RelativeToolTip": "Sound.cpp",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAE0AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-13T10:54:30.768Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-13T10:54:30.768Z"
             },
             {
               "$type": "Document",
@@ -208,8 +203,7 @@
               "RelativeToolTip": "Sound.h",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-13T10:54:20.059Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-13T10:54:20.059Z"
             },
             {
               "$type": "Document",
