@@ -137,7 +137,9 @@
     <ClCompile Include="Bird.cpp" />
     <ClCompile Include="Checkcollision.cpp" />
     <ClCompile Include="Gameloop.cpp" />
+    <ClCompile Include="img\Buttuon.cpp" />
     <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="Pipe.cpp" />
     <ClCompile Include="Sound.cpp" />
     <ClCompile Include="Source.cpp" />
@@ -149,7 +151,9 @@
     <ClInclude Include="Bird.h" />
     <ClInclude Include="Checkcollision.h" />
     <ClInclude Include="Gameloop.h" />
+    <ClInclude Include="img\Button.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="Mouse.h" />
     <ClInclude Include="Pipe.h" />
     <ClInclude Include="Sound.h" />
     <ClInclude Include="TextureManager.h" />

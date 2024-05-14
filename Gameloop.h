@@ -4,6 +4,7 @@
 #include "Pipe.h"
 #include "Bird.h"
 #include "Sound.h"
+#include "Mouse.h"
 #include <string>
 #include <fstream>
 #include <sstream>
@@ -18,6 +19,7 @@ private:
 	pipe p;
 	sound s;
 	bird bird;
+	mouse m;
 public:
 	bool state;
 	gameloop();

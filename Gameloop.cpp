@@ -51,6 +51,7 @@ bool gameloop::initData()
 					b.init();
 					bird.init();
 					s.init();
+					m.init();
 				}
 			}
 			
@@ -65,6 +66,7 @@ void gameloop::render()
 	p.render();
 	b.render();
 	bird.render();
+	m.render();
 	s.render();
 	s.play1();
 	SDL_RenderPresent(Renderer);
@@ -118,6 +120,7 @@ void gameloop::Event()
 	}
 	else
 		bird.gravity();
+
 }
 
 
