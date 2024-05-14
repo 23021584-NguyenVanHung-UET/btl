@@ -17,18 +17,41 @@ int main(int argc, char** argv)
 	Uint32 frameTime;
 	gameloop g;
 	g.initData();
-	while (g.gameplay() != false)
+	while (g.isQuit())
 	{
-		frameStart = SDL_GetTicks();
-		g.Event();
-		g.render();
-		g.update();
-		frameTime = SDL_GetTicks() - frameStart;
-		if (frameTime < DELAY_TIME)
+		if (g.gameplay() == false)
 		{
-			SDL_Delay(DELAY_TIME - frameTime);
+			while (g.gameplay() == false)
+			{
+				frameStart = SDL_GetTicks();
+				g.Event();
+				g.render();
+				g.update();
+				frameTime = SDL_GetTicks() - frameStart;
+				if (frameTime < DELAY_TIME)
+				{
+					SDL_Delay(DELAY_TIME - frameTime);
+				}
+			}
+		}
+		else
+		{
+			while (g.gameplay() != false)
+			{
+				frameStart = SDL_GetTicks();
+				g.Event();
+				g.render();
+				g.update();
+				frameTime = SDL_GetTicks() - frameStart;
+				if (frameTime < DELAY_TIME)
+				{
+					SDL_Delay(DELAY_TIME - frameTime);
+				}
+			}
+			g.clear();
 		}
 	}
-	g.clear();
+	
 	return 0;
 }
+	

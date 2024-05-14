@@ -6,33 +6,34 @@ position bird_pipe;
 
 void bird::render()
 {
-	Render(pos_bird.x, pos_bird.y);
-	animation_timer++;
-	if (animation_timer > 48)
-	{
-		animation_timer = 0;
-	}
-	if (animation_timer < 16)
-	{
-		if (CreatTexture(path1.c_str(), 1))
+		Render(pos_bird.x, pos_bird.y);
+		animation_timer++;
+		if (animation_timer > 48)
 		{
-			Render(pos_bird.x, pos_bird.y);
+			animation_timer = 0;
 		}
-	}
-	if (animation_timer >= 16 && animation_timer <= 32)
-	{
-		if (CreatTexture(path2.c_str(), 1))
+		if (animation_timer < 16)
 		{
-			Render(pos_bird.x, pos_bird.y);
+			if (CreatTexture(path1.c_str(), 1))
+			{
+				Render(pos_bird.x, pos_bird.y);
+			}
 		}
-	}
-	if (animation_timer > 32 && animation_timer <= 48)
-	{
-		if (CreatTexture(path3.c_str(), 1))
+		if (animation_timer >= 16 && animation_timer <= 32)
 		{
-			Render(pos_bird.x, pos_bird.y);
+			if (CreatTexture(path2.c_str(), 1))
+			{
+				Render(pos_bird.x, pos_bird.y);
+			}
 		}
-	}
+		if (animation_timer > 32 && animation_timer <= 48)
+		{
+			if (CreatTexture(path3.c_str(), 1))
+			{
+				Render(pos_bird.x, pos_bird.y);
+			}
+		}
+	
 	//cout << rect_pipe.x << " " << rect_pipe.y << " " << rect_pipe.w << " " << rect_pipe.h << endl;
 	//cout << rect_bird.x << " " << rect_bird.y << " " << rect_bird.w << " " << rect_bird.h << endl;
 }
@@ -46,6 +47,7 @@ bool bird::init()
 	{
 		return true;
 	}
+	//cout << pos_bird.x << " " << pos_bird.y;
 	return false;
 }
 
@@ -90,11 +92,11 @@ bool bird::check_collision()
 	rect_pipe.x = pos_pipe[i].x;
 	rect_pipe.w = rect_pipe.x + 60;
 	rect_pipe.y = pos_pipe[i].y;
-	rect_pipe.h = rect_pipe.y + 373;
+	rect_pipe.h = rect_pipe.y + 350;
 	if (rect_bird.w >= rect_pipe.x && rect_bird.x <= rect_pipe.w && rect_bird.h <= rect_pipe.h) return true;
 	if (rect_bird.w >= rect_pipe.x && rect_bird.x <= rect_pipe.w && rect_bird.y >= rect_pipe.h + PIPE_SPACE) return true;
 	if (rect_bird.w >= rect_pipe.x && rect_bird.x<=rect_pipe.w && ((rect_bird.y <= rect_pipe.h && rect_bird.h >= rect_pipe.h)||
-		(rect_bird.y<=rect_pipe.w+PIPE_SPACE && rect_bird.h >= rect_pipe.w + PIPE_SPACE)))
+		(rect_bird.y<=rect_pipe.w+PIPE_SPACE+10 && rect_bird.h >= rect_pipe.w + PIPE_SPACE)))
 	{
 		return true;
 	}
@@ -103,9 +105,8 @@ bool bird::check_collision()
 		i = (i + 1) % 4;
 		score++;
 	}
-	
-
 	if (pos_bird.y <= 0) return true;
+	
 	return false;
 }
 

@@ -6,7 +6,7 @@ bool sound::init()
 {
 	string path_breath = "sound/wing.wav";
 	string path_hit = "sound/sfx_bonk.wav";
-	string path_sound = "img/sound.png";
+	string path_sound = "img/sound_boss.wav";
 	bool success = true;
 
 	if (SDL_Init(SDL_INIT_AUDIO) < 0)
@@ -36,17 +36,20 @@ bool sound::init()
 			success = false;
 		}
 
-		if (!CreatTexture(path_sound))
-		{
-			return false;
-		}
+		boss = Mix_LoadWAV(path_sound.c_str());
 		Active = { 0, 0, getWidth(), getHeight() };
 		Mute = { 0, getHeight() / 2, getWidth(), getHeight() / 2 };
 		isPlay = true;
 	}
 	return success;
 }
-
+void sound::play()
+{
+	if (isPlay)
+	{
+		Mix_PlayChannel(-1, boss, 0);
+	}
+}
 void sound::play1()
 {
 	if (isPlay)

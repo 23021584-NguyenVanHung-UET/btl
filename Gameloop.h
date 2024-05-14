@@ -5,6 +5,7 @@
 #include "Bird.h"
 #include "Sound.h"
 #include "Mouse.h"
+#include "Button.h"
 #include <string>
 #include <fstream>
 #include <sstream>
@@ -20,14 +21,17 @@ private:
 	sound s;
 	bird bird;
 	mouse m;
+	button pause;
+	button start;
 public:
 	bool state;
+	bool menu_c;
 	gameloop();
 	~gameloop();
 	bool initData();
+	void menu();
 	bool gameplay();
 	bool isQuit() { return quit; }
-	bool isDie() { return die; }
 	void render();
 	void Event();
 	void update();

@@ -14,6 +14,7 @@ public:
 	bool init();
 	void play1();
 	void play2();
+	void play();
 	void render();
 	bool check_sound();
 
@@ -23,6 +24,7 @@ private:
 	bool isPlay = 0;
 	Mix_Chunk* breath = NULL;
 	Mix_Chunk* hit = NULL;
+	Mix_Chunk* boss = NULL;
 	Mix_Chunk* drop = NULL;
 	SDL_Rect Mute;
 	SDL_Rect Active;

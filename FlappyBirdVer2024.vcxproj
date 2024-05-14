@@ -137,7 +137,7 @@
     <ClCompile Include="Bird.cpp" />
     <ClCompile Include="Checkcollision.cpp" />
     <ClCompile Include="Gameloop.cpp" />
-    <ClCompile Include="img\Buttuon.cpp" />
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="Pipe.cpp" />
@@ -151,7 +151,7 @@
     <ClInclude Include="Bird.h" />
     <ClInclude Include="Checkcollision.h" />
     <ClInclude Include="Gameloop.h" />
-    <ClInclude Include="img\Button.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="Pipe.h" />

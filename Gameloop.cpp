@@ -4,7 +4,8 @@ using namespace std;
 
 gameloop::gameloop()
 {
-	state = true;
+	state = false;
+	quit=true;
 	cout << state << endl;
 
 }
@@ -13,6 +14,8 @@ gameloop::~gameloop()
 {
 	
 }
+//start.init("img/message.png", 2);
+//s.init();
 
 bool gameloop::initData()
 {
@@ -50,11 +53,11 @@ bool gameloop::initData()
 					p.init();
 					b.init();
 					bird.init();
-					s.init();
 					m.init();
+					s.init();
+					start.init("img/message.png", 2.0);
 				}
 			}
-			
 		}
 	}
 	return state;
@@ -62,13 +65,38 @@ bool gameloop::initData()
 
 void gameloop::render()
 {
-	bg.render();
-	p.render();
-	b.render();
-	bird.render();
-	m.render();
-	s.render();
-	s.play1();
+	
+	if (state == true)
+	{
+		bg.render();
+		p.render();
+		b.render();
+		m.render();
+		bird.render();
+		s.play();
+	}
+	else
+	{
+		s.play();
+		bg.render();
+		m.render();
+		//bird.render();
+		start.render(SCREEN_WIDTH / 2 - 100, SCREEN_HEIGHT / 2 - 150);
+		if (m.check_mouse() == true)
+		{
+			state = true;
+			//cout << state << endl;
+			gameplay();
+		}
+		else
+		{
+			state = false;
+			//cout << state << endl;
+			gameplay();
+		}
+	}
+	//start.render(SCREEN_WIDTH/2 - 100, SCREEN_HEIGHT/2 - 150);
+	//s.render();
 	SDL_RenderPresent(Renderer);
 	SDL_RenderClear(Renderer);
 }
@@ -76,19 +104,28 @@ void gameloop::render()
 void gameloop::update()
 {
 	bg.update();
-	p.update();
+	if (state == true)
+	{
+		p.update();
+	}
+	
 	b.update();
 	if (bird.check_collision() == true)
 	{
-		cout << score << endl;
+		s.play2();
+		//cout << score << endl;
 		state = false;
+		quit = false;
 	}
+
+	//cout << m.check_mouse() << " ";
 	//bird.update();
 }
 void gameloop::clear()
 {
 	bg.Free();
 	b.Free();
+	m.free();
 	p.Free();
 }
 
@@ -102,25 +139,28 @@ void gameloop::Event()
 	SDL_PollEvent(&event);
 	if (event.type == SDL_QUIT)
 	{
-		state = false;
+		quit = false;
 	}
-	if (event.type == SDL_KEYDOWN)
+	if (state == true)
 	{
-		if (event.key.keysym.sym == SDLK_UP)
+		if (event.type == SDL_KEYDOWN)
 		{
-			if (!bird.jump_state())
+			if (event.key.keysym.sym == SDLK_UP)
 			{
-				bird.jump();
-			}
-			else
-			{
-				bird.gravity();
+				s.play1();
+				if (!bird.jump_state())
+				{
+					bird.jump();
+				}
+				else
+				{
+					bird.gravity();
+				}
 			}
 		}
+		else
+			bird.gravity();
 	}
-	else
-		bird.gravity();
-
 }
 
 

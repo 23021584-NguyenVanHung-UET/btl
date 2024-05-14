@@ -7,8 +7,11 @@
 using namespace std;
 
 
+
 class mouse :public TextureManager
 {
+private:
+	bool check;
 public:
 	SDL_Rect cursor, tip;
 	mouse();
@@ -16,7 +19,8 @@ public:
 	bool init();
 	void render();
 	position pos_mouse;
-
+	bool check_mouse();
+	
 };
 
 #endif // !MOUSE_H_
